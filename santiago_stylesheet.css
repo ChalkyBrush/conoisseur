@@ -1,0 +1,106 @@
+#container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+div.header_footer {
+	height: 120px;
+	width: 100%;
+	margin-bottom: 80;
+	background-color: rgb(120, 120, 120);
+	text-align: center;
+}
+
+img {
+	float: left;
+}
+
+#header {
+	box-shadow: 4px 4px 4px rgba(0,0,0,.9);
+}
+
+ul.header_list {
+	list-style: none;
+	margin: 0px;
+} /*header list of navigation links*/
+
+li.li_header {
+	float: right;
+	text-decoration: none;
+	border-left: 1px solid rgba (0, 0, 0, .2);
+	border-right: 1px solid rgba(255,255,255,.1);
+	color: #ffffff;
+	display: inline-block;
+	font-size: 16px;
+	padding: 0px 20px;
+	line-height: 60px;
+	text-transform: uppercase;
+} /* place all but home right*/
+
+ul {
+	list-style: none;
+}
+
+.thumbnail {
+align-left;
+padding-left: -20px;
+margin-left: -50px;
+margin-top: -20px;
+}
+
+
+
+.card0 {
+	height: 220px;
+	width: 60%;
+	float: left;
+	margin: 20px;
+	margin-left: 120px;
+	background-color: rgba(55, 117, 16, .6);
+	padding: 20px;
+	box-shadow: 4px 4px 4px rgba(0,0,0,.4);
+}
+
+.card1 {
+	height: 220px;
+	width: 60%;
+	float: left;
+	margin: 20px;
+	margin-left: 120px;
+	background-color: rgba(25, 150, 100, .6);
+	padding: 20px;
+	box-shadow: 4px 4px 4px rgba(0,0,0,.4);
+}
+
+.card0:hover {
+	background-color: darkgreen;
+	box-shadow: 4px 4px 4px rgba(0,0,0,.9);
+}
+
+.card1:hover {
+	background-color: darkgreen;
+	box-shadow: 4px 4px 4px rgba(0,0,0,.9);
+}
+
+span {
+	font-size: 60px;
+	vertical-align: middle;
+	font-family: 'Actor', sans-serif;
+	color: #ffffff;
+	margin: auto;
+}
+
+a {
+	text-decoration:  none;
+	color: white;
+}
+
+a.card_link {
+	color: black;
+	font-size: 20px;
+	font-family: 'Actor', sans-serif;
+	text-align: center;
+	line-height: 30px;
+}
+
+
