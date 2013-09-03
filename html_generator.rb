@@ -3,12 +3,14 @@ require 'open-uri'
 
 class HtmlGenerator 
   def product_finder
+    product_type = "beer"
+    second_filter = "Canada"
     puts "HtmlGenerator: index"
     chile_wines = []
     products = []
     i = 1
     while i <= 20 do
-    raw_response = open("http://lcboapi.com/products?page=#{i}&per_page=100&q=cabernet").read
+    raw_response = open("http://lcboapi.com/products?page=#{i}&per_page=100&q=#{product_type}").read
     # Parse JSON­formatted text into a Ruby Hash 
     parsed_response = JSON.parse(raw_response)
     # parsed_array = parsed_array.push(parsed_response)
@@ -20,18 +22,23 @@ class HtmlGenerator
       x.each do |y|
       origin = y.fetch("origin")
       picture = y.fetch("image_url")
-        if origin.include?("Chile") && picture != nil
+        if origin.include?(second_filter) && picture != nil
           chile_wines = chile_wines.push(y)
         end
       end
     end
     chile_wines.each do |test|
-      p test.assoc "image_url"
+      p test.keys
     end
     return chile_wines
   end
 
   def index
+    puts "Welcome to the liquor product finder\n"
+    # puts "Enter a product type"
+    # user1 = gets.chomp
+    # puts "Enter a product origin"
+    # user2 = gets.chomp
     wines = product_finder
 
     File.open('santiago.html', 'w') do |f|
@@ -45,11 +52,25 @@ class HtmlGenerator
       f.puts("<body>")
       f.puts('<div id="container">')
       f.puts('<div class="header_footer" id="header"></div>')
-      f.puts("    <ul>")
+      f.puts("<ul>\n")
       wines.each_with_index do |wine, index|
-      	f.puts('<li><div class="'+"card#{index%2}"+'"><div class="thumbnail"><img src="'+"#{wine.fetch("image_thumb_url")}"+'"></div></div></li>')
-        
+      f.puts("  <li>\n")
+      f.puts('    <div class="'+"card#{index%2}"+'">')
+      f.puts('      <div class="thumbnail">')
+      f.puts('        <img src="'+"#{wine.fetch("image_thumb_url")}"+'">')
+      f.puts('        <p class="product_name">'+"#{wine.fetch("name")}")
+      f.puts('        </p>')
+      f.puts('        <p class="'+"other_text#{index%2}"+'"'+"> ID: #{wine.fetch("id")}")
+      f.puts('        </p>')
+      f.puts('      <div class="product_name"')
+      f.puts("    </div>")
+      f.puts("  </li>")
+        #do pages?
       end
+      f.puts('</ul>')
+      f.puts('</div>')
+      f.puts('</body>')
+      f.puts('</html>')
 
     end
 

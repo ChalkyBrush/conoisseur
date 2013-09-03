@@ -1,6 +1,6 @@
 #container {
 	width: 100%;
-	margin: 0 auto;
+	margin: auto;
 }
 
 div.header_footer {
@@ -13,18 +13,24 @@ div.header_footer {
 
 img {
 	float: left;
+	border-radius: 100%;
+	height: 220px;
+	width: 220px;
+	margin-left: -100px;
+	box-shadow: 4px 4px 4px rgba(0,0,0,.9);
 }
 
 #header {
 	box-shadow: 4px 4px 4px rgba(0,0,0,.9);
 }
 
-ul.header_list {
+/*ul.header_list {
 	list-style: none;
 	margin: 0px;
 } /*header list of navigation links*/
 
-li.li_header {
+li {
+
 	float: right;
 	text-decoration: none;
 	border-left: 1px solid rgba (0, 0, 0, .2);
@@ -35,50 +41,73 @@ li.li_header {
 	padding: 0px 20px;
 	line-height: 60px;
 	text-transform: uppercase;
-} /* place all but home right*/
+}
+
 
 ul {
 	list-style: none;
+	margin: auto;
 }
 
 .thumbnail {
-align-left;
-padding-left: -20px;
-margin-left: -50px;
-margin-top: -20px;
+display: inline-block;
 }
 
+.product_name {
+	padding-right: 20px;
+	position: relative;
+	line-height: 30px;
+	padding-left: 130px;
+	color: black;
+}
+
+.other_text0 {
+	padding-left: 150px;
+	font-size: 32px;
+	color: rgba(250, 250, 250, 1);
+}
+
+.other_text1 {
+	padding-left: 150px;
+	font-size: 32px;
+	color: rgba(230, 230, 230, 1);
+}
+
+.other_text0:hover {
+ color: black;
+}
+.other_text1:hover {
+ color: black;
+}
 
 
 .card0 {
 	height: 220px;
-	width: 60%;
-	float: left;
-	margin: 20px;
-	margin-left: 120px;
-	background-color: rgba(55, 117, 16, .6);
-	padding: 20px;
-	box-shadow: 4px 4px 4px rgba(0,0,0,.4);
+	width: 420px;
+	display: inline-block;
+	background-color: rgba(250, 250, 250, 1);
+	padding: 0px;
+	margin-bottom: 40px;
+	/*box-shadow: 4px 4px 4px rgba(0,0,0,.4);*/
 }
 
 .card1 {
 	height: 220px;
-	width: 60%;
-	float: left;
-	margin: 20px;
-	margin-left: 120px;
-	background-color: rgba(25, 150, 100, .6);
-	padding: 20px;
-	box-shadow: 4px 4px 4px rgba(0,0,0,.4);
+	width: 420px;
+	display: inline-block;
+	background-color: rgba(230, 230, 230, 1);
+	padding: 0px;
+	margin-bottom: 40px;
+/*	box-shadow: 4px 4px 4px rgba(0,0,0,.4);*/
 }
 
 .card0:hover {
-	background-color: darkgreen;
+	background-color: lightgrey;
 	box-shadow: 4px 4px 4px rgba(0,0,0,.9);
 }
 
 .card1:hover {
-	background-color: darkgreen;
+	background-color: lightgrey;
 	box-shadow: 4px 4px 4px rgba(0,0,0,.9);
 }
 
